@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+validation project
+</title>
+<style>
+   @font-face {
+       font-family: Quikhand;
+	   src: url(Quikhand.ttf);
+    }
+	
+	.form1 {
+	    padding: 20px 20px 20px 40px;
+	    text-align: left;
+	    font-family: Quikhand;
+		font-size: 20px;
+		font-weight: bold;
+	}
+   .newdate{
+       margin: 20px 0px 0px 78px;
+	   border-radius: 10px;
+	   
+	   
+   }
+   .desc {
+       margin: 20px 0px 20px 30px;
+	   border-radius: 10px;
+	   
+   }
+   
+   .name {
+       margin: 20px 0px 20px 68px;
+	   font-family: Quikhand;
+	   border-radius: 10px;
+	   width: 200px;
+	   height: 20px;
+	   text-align: left;
+	   
+   }
+   .division {
+       margin: auto;
+       border: 2px solid gray;
+	   text-align: center;
+	   padding: 50px;
+       width: 500px;
+	   height: 400px;
+	   background: linear-gradient(white,blue);
+	   box-shadow: 0px 10px 20px 0px;
+	   }
+	.price {
+	   border-radius: 10px;
+       margin: 20px 0px 0px 78px;
+       height: 20px;	   
+	}
+    .quant {
+	   border-radius: 10px;
+	   margin: 20px 0px 0px 50px;
+	   height: 20px;
+	}
+	.expdate{
+	   border-radius: 10px;
+	   margin: 20px 0px 0px 5px;
+	}
+	.submit{
+	   margin: 20px;
+	   border-radius: 10px;
+	   color: green;
+	   height: 40px;
+	   width: 60px;
+	}
+    	
+       
+</style>
+
+<script>
+function validateform(){
+    var x = document.forms["myform"]["fname"].value;
+	var y = document.forms["myform"]["dname"].value;
+	var z = document.forms["myform"]["pname"].value;
+	var a = document.forms["myform"]["qname"].value;
+	var b = document.forms["myform"]["ename"].value;
+	var t = document.forms["myform"]["sname"].value;
+	var w = Date.parse(t);
+	var v = Date.parse(b);
+	if (x == null || x == ""){
+	    alert("Name  must be filled out");
+		return false;
+	} else if (y == null || y ==""){
+	    alert("Description must be filled out.");    
+	} else if ( y.length > 100 ){
+	    alert("Decription must be less than 100 charactors.");
+	} else if (z == null || z == ""){
+	    alert("Please fill the price");
+	} else if (a == null || a == ""){
+	    alert("Please fill the desired quantity");
+	} else if (v - w <= 0){
+	    alert("Expiration date cant be before Manufacturing date");
+		
+	}
+	
+}
+</script>
+</head>
+<body style="background: radial-gradient(circle, red, yellow, blue,red);">
+<div class="division">
+<form name="myform" class="form1"  onsubmit="return validateform()">
+Name: <input type="text" class="name" name="fname"></br>
+Description: <textarea  type="text" name="dname" class="desc" "></textarea></br>
+Date: <input type= "date" class="newdate" value="date" name="sname"></br>
+Price: <input type="number" class="price" name="pname" ></br>
+Quantity: <input type="number" class="quant" name="qname" ></br>
+Expiration Date: <input type="date" class="expdate" name="ename"></br>
+<input type="submit" class="submit" value="submit" >
+
+</form>
+</div>
+</body>
+</html>

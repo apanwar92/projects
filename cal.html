@@ -1,0 +1,147 @@
+<html>
+<head>
+<style>
+body
+{
+background: radial-gradient(circle,green,yellow,red);
+} 
+.box
+{
+background-color:#3d4543;
+height:350px;
+width:250px;
+border-radius:10px;
+position:relative;
+top:80px;
+left:40%;
+box-shadow: 0px 10px 10px 3px;
+}
+
+
+
+.display
+{
+background-color:#222;
+width:200px;
+position:relative;
+left:15px;
+top:20px;
+height:40px;
+}
+.display input
+{
+position:relative;
+left:2px;
+top:2px;
+height:35px;
+color:black;
+background-color:#bccd95;
+font-size:21px;
+text-align:right;
+}
+
+.line1{
+    margin: 30px 5px 5px 10px ;
+	padding: 0px 10px 0px 10px ;
+	width: 40px;
+	height: 30px;
+	border-radius: 4px;
+	
+}
+
+.line1:hover {
+    color: red;
+	background: linear-gradient(gray,yellow);
+}
+
+
+.eight{
+    margin: 0px 5px 5px 10px ;
+	padding: 0px 10px 0px 10px ;
+	width: 40px;
+	height: 30px;
+	border-radius: 4px;
+	}
+	
+.eight:hover {
+   color: red;
+   background: linear-gradient(gray,yellow);
+}
+</style>
+</head>
+<body>
+<div class="box">
+<form name="frm">
+<div class="display">
+<input name="result">
+</div>
+</br>
+<input type="button" name="1" value="1" class="line1" onClick = "run1()">
+<input type="button" name="2" value="2" class="line1" onClick = "run2()">
+<input type="button" name="3" value="3" class="line1" onClick = "run3()">
+<input type="button" name="4" value="4" class="line1" onClick = "run4()">
+
+<input type="button" name="5" value="5" class="line1" onClick = "run5()">
+<input type="button" name="6" value="6" class="line1" onClick = "run6()">
+<input type="button" name="7" value="7" class="line1" onClick = "run7()">
+<input type="button" name="8" value="8" class="line1" onClick = "run8()">
+<input type="button" name="9" value="9" class="line1" onClick = "run9()">
+<input type="button" name="plus" value="+" class="line1" onClick = "runplus()">
+<input type="button" name="minus" value="-" class="line1" onClick = "runminus()">
+<input type="button" name="multiply" value="*" class="line1" onClick = "runmultiply()">
+<input type="button" name="divide" value="/" class="line1" onClick = "rundivide()">
+<input type="button" name="calc" value="=" class="line1" onClick = "evalu()">
+<input type="button" name="del" value="del" class="line1" onClick="frm.result.value= ''">
+</form>
+</div>
+<script>
+
+function run1()
+    {document.frm.result.value += "1";
+}
+function run2()
+    {document.frm.result.value += "2";
+}
+function run3()
+    {document.frm.result.value += "3";
+}
+function run4()
+    {document.frm.result.value += "4";
+}
+function run5()
+    {document.frm.result.value += "5";
+}
+function run6()
+    {document.frm.result.value += "6";
+}
+function run7()
+    {document.frm.result.value += "7";
+}
+
+function run8()
+    {document.frm.result.value += "8";
+}
+function run9()
+    {document.frm.result.value += "9";
+}
+function runplus()
+    {document.frm.result.value += "+";
+}
+function runminus()
+    {document.frm.result.value += "-";
+}
+function runmultiply()
+    {document.frm.result.value += "*";
+}
+function rundivide()
+    {document.frm.result.value += "/";
+}
+
+function evalu(){
+    var evalo = eval(document.frm.result.value)
+	document.frm.result.value = evalo;
+}
+
+</script>
+</body>
+</html>
